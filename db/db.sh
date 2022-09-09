@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
+    INSERT INTO public.users (id, nick, email, password, avatar, token42, "onOffMode", "twoFactorAuth", friends, "createdAt", "updatedAt") VALUES (4, 'cjani', 'cjani@student.21-school.ru', null, 'http://localhost:5001/dog.png', 'b890accd0d3b1570eb17f752a091905687512aa343167f7db583232e62d68f29', null, false, '[1, 2, 5, 3]', '2022-02-27 09:08:15.309000 +00:00', '2022-02-27 09:08:15.309000 +00:00');
+    INSERT INTO public.users (id, nick, email, password, avatar, token42, "onOffMode", "twoFactorAuth", friends, "createdAt", "updatedAt") VALUES (2, 'hemelia', 'hemelia@student.21-school.ru', null, 'http://localhost:5001/fox.png', 'b890accd0d3b1570eb17f752a091905687512aa343167f7db583232e62d68f29', null, false, '[1, 5, 4, 3]', '2022-02-27 09:08:15.309000 +00:00', '2022-02-27 09:08:15.309000 +00:00');
+    INSERT INTO public.users (id, nick, email, password, avatar, token42, "onOffMode", "twoFactorAuth", friends, "createdAt", "updatedAt") VALUES (3, 'snaomi', 'snaomi@student.21-school.ru', null, 'http://localhost:5001/wolf.png', 'b890accd0d3b1570eb17f752a091905687512aa343167f7db583232e62d68f29', null, false, '[1, 2, 5, 4]', '2022-02-27 09:08:15.309000 +00:00', '2022-02-27 09:08:15.309000 +00:00');
+    INSERT INTO public.users (id, nick, email, password, avatar, token42, "onOffMode", "twoFactorAuth", friends, "createdAt", "updatedAt") VALUES (1, 'cquiana', 'cquiana@student.21-school.ru', null, 'http://localhost:5001/owl.png', 'b890accd0d3b1570eb17f752a091905687512aa343167f7db583232e62d68f29', null, false, '[2, 5, 4, 3]', '2022-02-27 09:08:15.309000 +00:00', '2022-02-27 09:08:15.309000 +00:00');
+    INSERT INTO public.users (id, nick, email, password, avatar, token42, "onOffMode", "twoFactorAuth", friends, "createdAt", "updatedAt") VALUES (5, 'geldiss', 'geldiss@student.21-school.ru', null, 'http://localhost:5001/dog.png', 'b890accd0d3b1570eb17f752a091905687512aa343167f7db583232e62d68f29', null, false, '[1, 2, 4, 3]', '2022-02-27 09:08:15.309000 +00:00', '2022-02-27 09:08:15.309000 +00:00');
+EOSQL
